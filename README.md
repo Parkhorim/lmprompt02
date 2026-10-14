@@ -2,7 +2,7 @@
 
 학년·교과·단원만 고르면 제미나이 노트북(NotebookLM) 실습 프롬프트 20개가 내 수업에 맞게 채워지는 웹앱입니다.
 
-- 배포: https://lmprompt.vercel.app
+- 배포: https://lmprompt02.vercel.app (v1은 https://lmprompt.vercel.app 에 그대로 있음)
 - 기준 문서: [PRD.md](PRD.md)
 - v1(단일 파일)은 `legacy/index.html`에 동작 참고용으로 남겨 둠(배포하지 않음)
 

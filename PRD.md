@@ -7,9 +7,9 @@
 
 | 항목 | 내용 |
 |---|---|
-| 서비스 주소 | https://lmprompt.vercel.app |
-| 저장소 | https://github.com/Parkhorim/lmprompt (`main`) |
-| 배포 | Vercel 프로젝트 `lmprompt` (팀 `parkhorim's projects`) |
+| 서비스 주소 | https://lmprompt02.vercel.app (v2) · https://lmprompt.vercel.app (v1, 그대로 유지) |
+| 저장소 | https://github.com/Parkhorim/lmprompt02 (`main`, v2) · https://github.com/Parkhorim/lmprompt (v1) |
+| 배포 | Vercel 프로젝트 `lmprompt02`(v2)·`lmprompt`(v1) (팀 `parkhorim's projects`) |
 | 작성·운영 | 박호림(호림샘), 문태고등학교 교사 |
 | 사용처 | 2026 학교로 찾아가는 에듀테크 수업 역량 강화 연수 · 목포여자중학교 (2026.10.14.) |
 | 문서 기준일 | 2026-10-14 |
@@ -48,6 +48,7 @@
 | 10.14 | 상단 연수명에 `목포여자중학교` 표기 |
 | 10.14 | v2를 PRD만으로 새로 제작(Vite + React), 수용 기준 테스트 통과 |
 | 10.14 | 수업용·웹툰형 슬라이드 카드에 디자인 스타일 49종 선택 추가(부록 E) |
+| 10.14 | v2를 새 저장소 `Parkhorim/lmprompt02`에 올리고 Vercel 프로젝트 `lmprompt02`로 따로 배포(`lmprompt02.vercel.app`). v1 사이트는 그대로 둠 |
 | 10.14 | 단일 파일(v1)에서 Vite + React 다중 파일 웹앱(v2)으로 전환하기로 결정, PRD 개편 |
 
 ### 1.5 원본 대비 바꾼 판단과 이유
@@ -326,8 +327,10 @@ lmprompt/
 ---
 
 ## 8. 배포
-- 참가자에게는 `https://lmprompt.vercel.app`만 안내. 팀 주소(`lmprompt-parkhorims-projects.vercel.app` 등)는 Vercel 로그인 보호가 걸려 있어 열리지 않음
-- v2 빌드 설정은 저장소의 `vercel.json`으로 고정함
+- v2는 v1과 **다른 저장소·다른 Vercel 프로젝트**로 운영함. v1(`lmprompt.vercel.app`, 저장소 `Parkhorim/lmprompt`)은 건드리지 않고 그대로 둠
+- 참가자에게는 `https://lmprompt02.vercel.app`만 안내. 팀 주소(`lmprompt02-parkhorims-projects.vercel.app` 등)는 Vercel 로그인 보호가 걸려 있어 열리지 않음
+- Vercel 프로젝트 `lmprompt02`는 GitHub `Parkhorim/lmprompt02`와 연결됨. `main`에 푸시하면 운영 주소에 자동 배포, 다른 브랜치는 미리보기 배포
+- 빌드 설정은 저장소의 `vercel.json`으로 고정함
 ```json
 {
   "framework": "vite",
@@ -335,13 +338,8 @@ lmprompt/
   "outputDirectory": "dist"
 }
 ```
-- **현재 상태**: Vercel 프로젝트는 v1(빌드 없음) 설정이고, GitHub 저장소와 자동 연결이 안 되어 있음
-  1. Vercel 대시보드 → `lmprompt` → Settings → Git → Connect Git Repository → `Parkhorim/lmprompt`
-  2. 연결 후 `main`에 푸시하면 자동 배포됨
-- **전환 순서**(사이트가 끊기지 않게)
-  1. v2는 `v2` 브랜치에서 개발 → Vercel 미리보기 주소로 확인
-  2. 9절 수용 기준 통과 후 `main`에 병합 → 운영 주소 자동 반영
-  3. 문제가 생기면 Vercel 대시보드에서 직전 배포로 되돌림(Instant Rollback)
+- 큰 변경은 브랜치에서 작업 → 미리보기 주소로 확인 → 9절 수용 기준 통과 후 `main`에 병합
+- 문제가 생기면 Vercel 대시보드 `lmprompt02` → Deployments에서 직전 배포로 되돌림(Instant Rollback)
 
 ---
 
